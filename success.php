@@ -1,12 +1,11 @@
 <?php
-// Start the session
-session_start();
+include('verify.php');
 ?>
 
 <!DOCTYPE html>
 <style>
  body{ 
-  background: url('indy.jpg');
+  background: url('http://i.ytimg.com/vi/4mGFPXc0WFg/maxresdefault.jpg');
 /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
   
@@ -44,42 +43,27 @@ session_start();
 <head>
   <title>Login</title>
   <link rel="stylesheet"
-  	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet"
-  	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="static/stylesheets/styles.css">
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 
 <body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="static/js/main.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ 
 <div class = "bx">
 <div class="panel panel-info">
       <div class="panel-heading">
-        <h3 class="panel-title">Welcome to ORS, Inc.</h3>
+        <h3 class="panel-title">ORS, Inc Home page</h3>
       </div>
       <div class="panel-body">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-
+        <h3 class = "text-center">Welcome, <?php echo $_SESSION["login_user"]; ?>!</h3>
+        <br><br><br><br>
       </div>
     </div>
 </div>
 
-<?php
-// Set session variables
-$_SESSION["favcolor"] = "green";
-$_SESSION["favanimal"] = "cat";
-echo "Session variables are set.";
-?>
 </body>
 </html>
